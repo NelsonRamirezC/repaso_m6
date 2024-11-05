@@ -1,0 +1,18 @@
+{% extends "layouts/base.html" %}
+
+
+{% block contenido %}
+
+<header>
+    <h1 class="text-center">Listado de Vehículos</h1>
+
+    <ul>
+        {% for v in vehiculos %}
+        <li>Modelo: {{v.modelo}} - Marca: {{v.marca}}</li>
+        {% endfor %}
+    </ul>
+</header>
+
+{% endblock contenido %}
+
+
