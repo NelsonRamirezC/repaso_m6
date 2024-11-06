@@ -1,18 +1,32 @@
 {% extends "layouts/base.html" %}
-
+{% load static %}
 
 {% block contenido %}
 
 <header>
     <h1 class="text-center">Listado de Vehículos</h1>
-
-    <ul>
-        {% for v in vehiculos %}
-        <li>Modelo: {{v.modelo}} - Marca: {{v.marca}}</li>
-        {% endfor %}
-    </ul>
 </header>
 
+<main class="container py-3">
+    <section id="listado_vehiculos">
+        {% for vehiculo in vehiculos %}
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="{% static vehiculo.imagen.url %}" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{vehiculo.marca}}</h5>
+                  <p class="card-text">Modelo: {{vehiculo.modelo}}</p>
+                  <a href="" class="btn btn-info">Ver más</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+    </section>
+</main>
 {% endblock contenido %}
 
 

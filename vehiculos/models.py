@@ -12,6 +12,7 @@ class Vehiculo(models.Model):
     tipo = models.CharField(max_length=50, blank=False, null=False, choices=tipo_vehiculo, default='Pasajeros')
     create_at = models.DateTimeField(null=False, blank=False, auto_now_add=True)
     update_at = models.DateTimeField(null=False, blank=False, auto_now_add=False, auto_now=True)
+    imagen = models.ImageField(upload_to='vehiculos/', blank=True, null=True)
     
     
     def __str__(self) -> str:
